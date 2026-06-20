@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="제한 시간 안에 빠르게 선택하고 점수를 쌓는 영화 퀴즈 게임"
+    />
+    <title>Movie Quiz</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="game-shell">
+      <section class="game-card" aria-labelledby="app-title">
+        <header class="game-header">
+          <h1 id="app-title">Movie Quiz</h1>
+          <div class="score-card" aria-label="누적 점수">
+            <span>Score</span>
+            <strong id="hud-score">0</strong>
+          </div>
+        </header>
+
+        <div id="quiz-view">
+          <section class="hud-grid" aria-label="게임 진행 정보">
+            <div class="hud-card hud-level">
+              <span>Level</span>
+              <strong id="hud-level">1</strong>
+            </div>
+            <div class="hud-card hud-question">
+              <span>Question</span>
+              <strong id="hud-question">1 / 10</strong>
+            </div>
+            <div class="hud-card hud-time">
+              <span>Time</span>
+              <strong id="hud-time">30</strong>
+            </div>
+          </section>
+
+          <div class="progress-track" aria-label="레벨 진행 상황">
+            <div
+              id="progress-value"
+              class="progress-value"
+              role="progressbar"
+              aria-valuemin="0"
+              aria-valuemax="10"
+              aria-valuenow="1"
+            ></div>
+          </div>
+
+          <section class="question-panel" aria-live="polite">
+            <p id="question-number" class="question-number">QUESTION 01</p>
+            <h2 id="question-text"></h2>
+          </section>
+
+          <div
+            id="choices"
+            class="choice-list"
+            aria-label="답변 선택지"
+          ></div>
+        </div>
+
+        <div id="level-result-view" class="result-view" aria-live="polite" hidden>
+          <p class="result-eyebrow">Level Result</p>
+          <h2 id="level-result-title" class="result-title">Level Clear</h2>
+          <p id="level-result-correct" class="result-subtitle">정답 0 / 10</p>
+          <p class="level-score">
+            <strong id="level-gained-score">+0</strong>
+            <span>점 획득</span>
+          </p>
+          <p id="level-breakdown" class="score-breakdown"></p>
+          <button id="level-action-button" class="primary-button" type="button">
+            다음 레벨
+          </button>
+        </div>
+
+        <div id="final-result-view" class="result-view" aria-live="polite" hidden>
+          <p class="result-eyebrow">Game Complete</p>
+          <h2 class="result-title">최종 결과</h2>
+          <p class="final-score">
+            <strong id="final-score">0</strong>
+            <span>점</span>
+          </p>
+          <p id="final-correct" class="result-subtitle">정답 0 / 100</p>
+          <p id="final-message" class="final-message"></p>
+          <button id="restart-button" class="primary-button" type="button">
+            다시 시작
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
