@@ -1,6 +1,6 @@
 const LEVEL_COUNT = 10;
 const QUESTIONS_PER_LEVEL = 10;
-const LEVEL_TIME_LIMITS = [30, 28, 26, 24, 22, 20, 18, 16, 14, 12];
+const LEVEL_TIME_LIMITS = [44, 42, 40, 38, 36, 34, 32, 30, 28, 26];
 const LEVEL_CLEAR_ACCURACY = 0.6;
 const DIFFICULTY_POINTS = {
   easy: 10,
